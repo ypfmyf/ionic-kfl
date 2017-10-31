@@ -1,0 +1,45 @@
+
+<div ng-include="'tpl/include/header.html'"></div>
+<ion-content class="has-header has-footer">
+  <!-- ionic的form是通过list来的管理-->
+  <div
+    ng-hide="result"
+    class="list list-inset">
+
+    <label class="item item-input">
+      <span class="input-label">联系人</span>
+      <input type="text"
+             ng-model="order.user_name"
+             placeholder="请输入联系人名称"/>
+    </label>
+    <label class="item item-input">
+      <span class="input-label">联系电话</span>
+      <input type="text"
+             ng-model="order.phone"
+             placeholder="请输入联系人电话"/>
+    </label>
+    <label class="item item-input">
+      <span class="input-label">联系地址</span>
+      <textarea ng-model="order.addr"></textarea>
+    </label>
+    <label class="item item-input">
+      <span class="input-label">选择性别</span>
+    </label>
+    <ion-radio value="1"
+               ng-model="order.sex">男</ion-radio>
+    <ion-radio value="2"
+               ng-model="order.sex">女</ion-radio>
+    <button
+      ng-click="submitOrder()"
+      class="button button-balanced button-block">
+      提交
+    </button>
+  </div>
+
+  <p ng-show="result">
+    {{result}}
+  </p>
+</ion-content>
+
+<div ng-include="'tpl/include/footer.html'"></div>
+
